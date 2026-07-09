@@ -9,122 +9,173 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      color: #26323f;
-      background: #f2f7fb;
+      font-family: "Hiragino Maru Gothic ProN", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      color: #35424f;
+      background: #fffdf7;
       line-height: 1.9;
     }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
 
     /* ナビゲーション */
     nav {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(31, 78, 121, 0.95);
-      backdrop-filter: blur(6px);
+      background: rgba(255, 253, 247, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px dashed #bcd7ec;
     }
     nav .inner {
-      max-width: 860px; margin: 0 auto; padding: 10px 20px;
+      max-width: 920px; margin: 0 auto; padding: 12px 20px;
       display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
     }
-    nav .brand { color: #fff; font-weight: bold; letter-spacing: 0.12em; margin-right: auto; }
-    nav a { color: #cfe4f7; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { color: #fff; }
+    nav .brand { color: #2e6fa3; font-weight: bold; letter-spacing: 0.1em; margin-right: auto; }
+    nav a {
+      color: #46688a; text-decoration: none; font-size: 0.9rem;
+      padding: 4px 12px; border-radius: 999px; transition: background 0.2s;
+    }
+    nav a:hover { background: #e3f1fb; }
 
     /* ヒーロー */
-    .hero {
-      text-align: center;
-      padding: 90px 20px 70px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 30%),
-        radial-gradient(circle at 15% 65%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 25%),
-        linear-gradient(165deg, #bfe0f6 0%, #8fc3e8 45%, #dff0fb 100%);
-      border-bottom: 3px solid #2e6fa3;
-      position: relative;
-      overflow: hidden;
+    .hero { position: relative; overflow: hidden; }
+    .hero .bg {
+      width: 100%; height: 520px; object-fit: cover;
+      filter: saturate(1.1);
     }
-    .hero .plane {
-      font-size: 72px; line-height: 1; display: inline-block;
-      animation: fly 5s ease-in-out infinite;
+    .hero .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(46,111,163,0.15) 0%, rgba(31,78,121,0.55) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
+      text-align: center; padding: 30px 20px 56px;
+      color: #fff;
     }
-    @keyframes fly {
-      0%, 100% { transform: translateY(0) rotate(-8deg); }
-      50%      { transform: translateY(-14px) rotate(-4deg); }
+    .hero h1 {
+      font-size: 2.6rem; letter-spacing: 0.06em;
+      text-shadow: 0 3px 14px rgba(20, 50, 80, 0.6);
     }
-    .hero h1 { font-size: 2.3rem; margin-top: 14px; color: #1f4e79; letter-spacing: 0.06em; }
-    .hero .en { color: #2e6fa3; font-size: 1rem; letter-spacing: 0.3em; margin-top: 4px; }
-    .hero p { color: #46688a; margin-top: 12px; }
+    .hero .en { font-size: 1rem; letter-spacing: 0.35em; opacity: 0.95; margin-top: 4px; text-shadow: 0 2px 8px rgba(20,50,80,0.6); }
+    .hero p { margin-top: 10px; text-shadow: 0 2px 8px rgba(20, 50, 80, 0.7); }
     .hero .cta {
-      display: inline-block; margin-top: 22px; padding: 12px 34px;
-      background: #e8a33d; color: #fff; font-weight: bold;
-      border-radius: 999px; text-decoration: none;
-      box-shadow: 0 6px 14px rgba(232, 163, 61, 0.4);
+      display: inline-block; margin-top: 20px; padding: 13px 38px;
+      background: #ffb547; color: #5c3d00; font-weight: bold;
+      border-radius: 999px; text-decoration: none; font-size: 1.05rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: transform 0.15s;
     }
-    .hero .cta:hover { background: #d8932e; }
+    .hero .cta:hover { transform: translateY(-3px) rotate(-1deg); }
 
-    section { padding: 52px 0; border-bottom: 1px solid #dbe7f0; }
-    section:last-of-type { border-bottom: none; }
+    section { padding: 60px 0 54px; }
+    section:nth-of-type(even) { background: #f0f7fd; }
     h2 {
-      font-size: 1.5rem; color: #1f4e79; margin-bottom: 6px;
-      display: flex; align-items: center; gap: 8px;
+      font-size: 1.6rem; color: #1f4e79;
+      display: flex; align-items: center; gap: 10px;
     }
-    .h-sub { color: #7a94ab; font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 20px; }
+    .h-sub {
+      color: #8fb4d4; font-size: 0.8rem; letter-spacing: 0.25em;
+      margin: 2px 0 26px 2px; font-weight: bold;
+    }
 
-    /* 座席カード */
-    .seats { display: flex; flex-wrap: wrap; gap: 16px; }
-    .seat {
-      flex: 1 1 220px; background: #fff; border-radius: 16px;
-      padding: 24px 18px; text-align: center;
-      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
-      border-top: 4px solid #2e6fa3;
+    /* お店について：写真＋テキスト2カラム */
+    .about-grid {
+      display: flex; gap: 30px; align-items: center; flex-wrap: wrap;
     }
-    .seat .icon { font-size: 44px; line-height: 1; }
-    .seat .name { font-weight: bold; color: #1f4e79; margin-top: 10px; font-size: 1.05rem; }
-    .seat .note { font-size: 0.85rem; color: #5c7791; margin-top: 4px; }
+    .about-grid .txt { flex: 1 1 320px; }
+    .about-grid .pic { flex: 1 1 320px; }
+    .about-grid .pic img {
+      border-radius: 22px; transform: rotate(1.5deg);
+      box-shadow: 0 12px 28px rgba(31, 78, 121, 0.22);
+      border: 6px solid #fff;
+    }
+
+    /* 座席カード：写真つき */
+    .seats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .seat {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 20px rgba(31, 78, 121, 0.13);
+      transition: transform 0.2s;
+    }
+    .seat:hover { transform: translateY(-6px) rotate(-0.5deg); }
+    .seat img { height: 170px; width: 100%; object-fit: cover; }
+    .seat .body { padding: 16px 18px 20px; }
+    .seat .name { font-weight: bold; color: #1f4e79; font-size: 1.1rem; }
+    .seat .note { font-size: 0.87rem; color: #64798d; margin-top: 4px; }
+    .seat .tag {
+      display: inline-block; font-size: 0.72rem; font-weight: bold;
+      background: #ffe6bd; color: #9a6510; border-radius: 999px;
+      padding: 1px 12px; margin-bottom: 8px;
+    }
 
     /* 搭乗券風プラン */
     .boarding {
-      background: #fff; border-radius: 14px; margin-bottom: 14px;
-      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
+      background: #fff; border-radius: 16px; margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(31, 78, 121, 0.13);
       display: flex; overflow: hidden;
     }
     .boarding .stub {
-      background: #1f4e79; color: #fff; padding: 18px 14px;
+      background: linear-gradient(160deg, #2e6fa3, #1f4e79); color: #fff;
+      padding: 18px 14px; min-width: 100px;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      min-width: 96px; text-align: center;
-      border-right: 2px dashed #cfe4f7;
+      text-align: center; border-right: 3px dashed #cfe4f7;
     }
-    .boarding .stub .cls { font-size: 0.7rem; letter-spacing: 0.15em; opacity: 0.8; }
-    .boarding .stub .code { font-size: 1.3rem; font-weight: bold; }
-    .boarding .body { padding: 16px 20px; flex: 1; }
+    .boarding .stub .cls { font-size: 0.68rem; letter-spacing: 0.18em; opacity: 0.85; }
+    .boarding .stub .code { font-size: 1.35rem; font-weight: bold; }
+    .boarding .body { padding: 16px 22px; flex: 1; }
     .boarding .b-name { font-weight: bold; color: #1f4e79; }
-    .boarding .b-price { color: #e8a33d; font-weight: bold; float: right; font-size: 1.1rem; }
-    .boarding .b-desc { font-size: 0.9rem; color: #5c7791; }
+    .boarding .b-price { color: #e8912d; font-weight: bold; float: right; font-size: 1.15rem; }
+    .boarding .b-desc { font-size: 0.9rem; color: #64798d; }
 
-    /* メニュー */
+    /* メニュー：写真2枚＋リスト */
+    .menu-pics { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+    .menu-pics figure { flex: 1 1 260px; position: relative; }
+    .menu-pics img {
+      border-radius: 20px; height: 220px; width: 100%; object-fit: cover;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 24px rgba(31, 78, 121, 0.18);
+    }
+    .menu-pics figure:first-child img { transform: rotate(-1.5deg); }
+    .menu-pics figure:last-child img { transform: rotate(1.5deg); }
+    .menu-pics figcaption {
+      position: absolute; left: 14px; bottom: 12px;
+      background: rgba(255, 255, 255, 0.92); color: #1f4e79;
+      font-size: 0.8rem; font-weight: bold;
+      padding: 3px 14px; border-radius: 999px;
+    }
     .menu-item {
       display: flex; justify-content: space-between; align-items: baseline;
-      padding: 12px 0; border-bottom: 1px dashed #b9cfe0;
+      padding: 12px 4px; border-bottom: 2px dashed #cfe0ee;
     }
     .menu-item .name { font-weight: bold; }
-    .menu-item .desc { font-size: 0.82rem; color: #7a94ab; display: block; font-weight: normal; }
+    .menu-item .desc { font-size: 0.82rem; color: #8296a9; display: block; font-weight: normal; }
     .menu-item .price { color: #2e6fa3; font-weight: bold; white-space: nowrap; margin-left: 16px; }
 
     /* お願い */
     .rules { list-style: none; }
-    .rules li { padding: 5px 0 5px 28px; position: relative; }
-    .rules li::before { content: "✈️"; position: absolute; left: 0; }
+    .rules li {
+      padding: 10px 16px 10px 44px; position: relative;
+      background: #fff; border-radius: 14px; margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(31, 78, 121, 0.08);
+    }
+    .rules li::before { content: "✈️"; position: absolute; left: 14px; }
 
     /* 営業案内 */
-    .info { list-style: none; background: #fff; border-radius: 16px; padding: 22px 26px; box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10); }
-    .info li { padding: 7px 0; border-bottom: 1px solid #edf3f8; }
+    .info {
+      list-style: none; background: #fff; border-radius: 20px;
+      padding: 26px 30px; box-shadow: 0 8px 20px rgba(31, 78, 121, 0.13);
+    }
+    .info li { padding: 8px 0; border-bottom: 1px solid #eef4f9; }
     .info li:last-child { border-bottom: none; }
     .info .label { display: inline-block; width: 100px; color: #2e6fa3; font-weight: bold; }
 
     footer {
-      text-align: center; padding: 34px 20px;
-      background: #1f4e79; color: #dceaf6; font-size: 0.9rem;
+      text-align: center; padding: 36px 20px;
+      background: #1f4e79; color: #dceaf6; font-size: 0.88rem;
     }
-    footer .f-logo { font-size: 26px; margin-bottom: 6px; }
+    footer .f-logo { font-size: 28px; margin-bottom: 6px; }
+    footer .credit { font-size: 0.72rem; opacity: 0.7; margin-top: 10px; }
+
+    @media (max-width: 560px) {
+      .hero .bg { height: 420px; }
+      .hero h1 { font-size: 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -141,32 +192,66 @@
   </nav>
 
   <header class="hero">
-    <span class="plane">✈️</span>
-    <h1>エアプレインカフェ</h1>
-    <div class="en">AIR PLANE CAFE</div>
-    <p>コーヒーとともに、空の旅へ。搭乗手続きはいりません。</p>
-    <a class="cta" href="#plans">搭乗プランを見る</a>
+    <img class="bg" src="images/hero-takeoff.jpg" alt="青空へ離陸する飛行機">
+    <div class="overlay">
+      <h1>エアプレインカフェ</h1>
+      <div class="en">AIR PLANE CAFE</div>
+      <p>コーヒーとともに、空の旅へ。搭乗手続きはいりません。</p>
+      <a class="cta" href="#plans">🎫 搭乗プランを見る</a>
+    </div>
   </header>
 
-  <div class="wrap">
-
-    <section id="about">
+  <section id="about">
+    <div class="wrap">
       <h2>🛫 お店について</h2>
       <div class="h-sub">ABOUT US</div>
-      <p>AIR PLANE CAFE「エアプレインカフェ」へようこそ。店内は飛行機のキャビンをまるごと再現した空間で、実際に航空機で使われていた本物のシートに座りながら、機内食風のメニューをお楽しみいただけます。窓の外に流れる雲の映像と、ほのかに響くエンジン音のBGMで、気分はまるで高度1万メートルのフライト中。パスポートも搭乗券もいりません。どうぞお気軽にご搭乗ください。</p>
-    </section>
+      <div class="about-grid">
+        <div class="txt">
+          <p>AIR PLANE CAFE「エアプレインカフェ」へようこそ。店内は飛行機のキャビンをまるごと再現した空間で、実際に航空機で使われていた本物のシートに座りながら、機内食風のメニューをお楽しみいただけます。</p>
+          <p style="margin-top: 12px;">窓の外に流れる雲の映像と、ほのかに響くエンジン音のBGMで、気分はまるで高度1万メートルのフライト中。パスポートも搭乗券もいりません。どうぞお気軽にご搭乗ください。</p>
+        </div>
+        <div class="pic">
+          <img src="images/cabin.jpg" alt="飛行機のキャビンを再現した店内">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="seats">
+  <section id="seats">
+    <div class="wrap">
       <h2>💺 座席のご案内</h2>
       <div class="h-sub">SEAT MAP</div>
       <div class="seats">
-        <div class="seat"><div class="icon">🪟</div><div class="name">窓側シート</div><div class="note">雲の映像が流れる窓際で、空を眺めながらくつろげる人気席。</div></div>
-        <div class="seat"><div class="icon">🛋️</div><div class="name">ファーストクラス</div><div class="note">ゆったり本革リクライニング。フットレスト完備の贅沢席。</div></div>
-        <div class="seat"><div class="icon">🕹️</div><div class="name">コックピット席</div><div class="note">計器パネルと操縦桿に囲まれた、一日3組限定の特等席。</div></div>
+        <div class="seat">
+          <img src="images/window-view.jpg" alt="窓から見える翼と雲海">
+          <div class="body">
+            <span class="tag">いちばん人気</span>
+            <div class="name">窓側シート</div>
+            <div class="note">雲海の映像が流れる窓際で、空を眺めながらのんびりくつろげます。</div>
+          </div>
+        </div>
+        <div class="seat">
+          <img src="images/first-class.jpg" alt="ゆったりしたファーストクラスの座席">
+          <div class="body">
+            <span class="tag">ごほうびに</span>
+            <div class="name">ファーストクラス</div>
+            <div class="note">ゆったり本革リクライニング。フットレスト完備のちょっと贅沢な席。</div>
+          </div>
+        </div>
+        <div class="seat">
+          <img src="images/cockpit.jpg" alt="計器が光るコックピット">
+          <div class="body">
+            <span class="tag">1日3組限定</span>
+            <div class="name">コックピット席</div>
+            <div class="note">計器パネルと操縦桿に囲まれた、飛行機好きにはたまらない特等席。</div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="plans">
+  <section id="plans">
+    <div class="wrap">
       <h2>🎫 搭乗プラン</h2>
       <div class="h-sub">BOARDING PASS</div>
       <div class="boarding">
@@ -181,19 +266,33 @@
         <div class="stub"><span class="cls">CLASS</span><span class="code">FST</span></div>
         <div class="body"><span class="b-price">¥2,800</span><span class="b-name">ファーストプラン（フリータイム）</span><div class="b-desc">時間を気にせずゆったり。ドリンクおかわり自由・ファーストクラス席優先。</div></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="menu">
+  <section id="menu">
+    <div class="wrap">
       <h2>☕ 機内メニュー</h2>
       <div class="h-sub">IN-FLIGHT MENU</div>
+      <div class="menu-pics">
+        <figure>
+          <img src="images/latte.jpg" alt="ラテアートのカフェラテ">
+          <figcaption>☁️ 雲のカフェラテ</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bakery.jpg" alt="焼き菓子とパンの盛り合わせ">
+          <figcaption>🥐 焼きたてスイーツ</figcaption>
+        </figure>
+      </div>
       <div class="menu-item"><span class="name">キャプテンブレンドコーヒー<span class="desc">機長おすすめの深煎りブレンド</span></span><span class="price">¥500</span></div>
       <div class="menu-item"><span class="name">雲のカフェラテ<span class="desc">ふわふわクラウドフォームのラテ</span></span><span class="price">¥560</span></div>
       <div class="menu-item"><span class="name">青空ソーダ<span class="desc">飛行機雲シロップ入りの空色ソーダ</span></span><span class="price">¥580</span></div>
       <div class="menu-item"><span class="name">機内食プレート（ビーフ or チキン）<span class="desc">本格トレイで提供する名物メニュー</span></span><span class="price">¥1,200</span></div>
       <div class="menu-item"><span class="name">飛行機クッキー<span class="desc">おみやげにも人気のオリジナルクッキー</span></span><span class="price">¥400</span></div>
-    </section>
+    </div>
+  </section>
 
-    <section id="rules">
+  <section id="rules">
+    <div class="wrap">
       <h2>🧳 ご搭乗のお願い</h2>
       <div class="h-sub">FLIGHT INFORMATION</div>
       <ul class="rules">
@@ -202,9 +301,11 @@
         <li>他のお客様が写り込む撮影はご遠慮ください。</li>
         <li>シートベルト着用サインはありませんが、お忘れ物にご注意ください。</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="access">
+  <section id="access">
+    <div class="wrap">
       <h2>📍 運航案内・アクセス</h2>
       <div class="h-sub">ACCESS</div>
       <ul class="info">
@@ -214,13 +315,13 @@
         <li><span class="label">電話</span>03-1234-7470</li>
         <li><span class="label">アクセス</span>ひこうき駅 東口より徒歩3分</li>
       </ul>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
   <footer>
     <div class="f-logo">✈️</div>
     © 2026 AIR PLANE CAFE エアプレインカフェ
+    <div class="credit">Photos licensed via Adobe Stock</div>
   </footer>
 
 </body>
