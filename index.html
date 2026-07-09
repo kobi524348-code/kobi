@@ -4,128 +4,209 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AIR PLANE CAFE エアプレインカフェ — 飛行機カフェ</title>
-  <meta name="description" content="空と飛行機をテーマにしたカフェ「AIR PLANE CAFE」のホームページです。機内食風メニューとともに、空の旅気分をお楽しみください。">
+  <meta name="description" content="空と飛行機をテーマにしたカフェ「AIR PLANE CAFE」の公式ホームページ。機内食風メニューと本物の航空機シートで、空の旅気分をお楽しみください。">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
       color: #26323f;
       background: #f2f7fb;
       line-height: 1.9;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
 
-    header {
-      text-align: center;
-      padding: 64px 20px 54px;
-      background: linear-gradient(160deg, #dff0fb 0%, #cfe4f7 55%, #eef6fc 100%);
-      border-bottom: 3px solid #2e6fa3;
+    /* ナビゲーション */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(31, 78, 121, 0.95);
+      backdrop-filter: blur(6px);
     }
-    header .logo { font-size: 66px; line-height: 1; }
-    header h1 { font-size: 2rem; margin-top: 10px; color: #1f4e79; letter-spacing: 0.06em; }
-    header .en { color: #2e6fa3; font-size: 0.95rem; letter-spacing: 0.25em; margin-top: 2px; }
-    header p { color: #5c7791; margin-top: 8px; }
+    nav .inner {
+      max-width: 860px; margin: 0 auto; padding: 10px 20px;
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    }
+    nav .brand { color: #fff; font-weight: bold; letter-spacing: 0.12em; margin-right: auto; }
+    nav a { color: #cfe4f7; text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: #fff; }
 
-    section { padding: 46px 0; border-bottom: 1px solid #dbe7f0; }
+    /* ヒーロー */
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 30%),
+        radial-gradient(circle at 15% 65%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 25%),
+        linear-gradient(165deg, #bfe0f6 0%, #8fc3e8 45%, #dff0fb 100%);
+      border-bottom: 3px solid #2e6fa3;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .plane {
+      font-size: 72px; line-height: 1; display: inline-block;
+      animation: fly 5s ease-in-out infinite;
+    }
+    @keyframes fly {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50%      { transform: translateY(-14px) rotate(-4deg); }
+    }
+    .hero h1 { font-size: 2.3rem; margin-top: 14px; color: #1f4e79; letter-spacing: 0.06em; }
+    .hero .en { color: #2e6fa3; font-size: 1rem; letter-spacing: 0.3em; margin-top: 4px; }
+    .hero p { color: #46688a; margin-top: 12px; }
+    .hero .cta {
+      display: inline-block; margin-top: 22px; padding: 12px 34px;
+      background: #e8a33d; color: #fff; font-weight: bold;
+      border-radius: 999px; text-decoration: none;
+      box-shadow: 0 6px 14px rgba(232, 163, 61, 0.4);
+    }
+    .hero .cta:hover { background: #d8932e; }
+
+    section { padding: 52px 0; border-bottom: 1px solid #dbe7f0; }
     section:last-of-type { border-bottom: none; }
     h2 {
-      font-size: 1.4rem; color: #1f4e79; margin-bottom: 18px;
+      font-size: 1.5rem; color: #1f4e79; margin-bottom: 6px;
       display: flex; align-items: center; gap: 8px;
     }
+    .h-sub { color: #7a94ab; font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 20px; }
 
+    /* 座席カード */
     .seats { display: flex; flex-wrap: wrap; gap: 16px; }
     .seat {
-      flex: 1 1 200px; background: #fff; border-radius: 16px;
-      padding: 20px 16px; text-align: center;
+      flex: 1 1 220px; background: #fff; border-radius: 16px;
+      padding: 24px 18px; text-align: center;
       box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
       border-top: 4px solid #2e6fa3;
     }
-    .seat .icon { font-size: 40px; line-height: 1; }
-    .seat .name { font-weight: bold; color: #1f4e79; margin-top: 8px; }
-    .seat .note { font-size: 0.85rem; color: #5c7791; }
+    .seat .icon { font-size: 44px; line-height: 1; }
+    .seat .name { font-weight: bold; color: #1f4e79; margin-top: 10px; font-size: 1.05rem; }
+    .seat .note { font-size: 0.85rem; color: #5c7791; margin-top: 4px; }
 
-    .menu-item {
-      display: flex; justify-content: space-between;
-      padding: 10px 0; border-bottom: 1px dashed #b9cfe0;
-    }
-    .menu-item .price { color: #2e6fa3; font-weight: bold; white-space: nowrap; }
-
+    /* 搭乗券風プラン */
     .boarding {
-      background: #fff; border-radius: 16px; padding: 18px 20px;
-      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10); margin-bottom: 12px;
-      border-left: 6px solid #e8a33d;
+      background: #fff; border-radius: 14px; margin-bottom: 14px;
+      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
+      display: flex; overflow: hidden;
     }
+    .boarding .stub {
+      background: #1f4e79; color: #fff; padding: 18px 14px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      min-width: 96px; text-align: center;
+      border-right: 2px dashed #cfe4f7;
+    }
+    .boarding .stub .cls { font-size: 0.7rem; letter-spacing: 0.15em; opacity: 0.8; }
+    .boarding .stub .code { font-size: 1.3rem; font-weight: bold; }
+    .boarding .body { padding: 16px 20px; flex: 1; }
     .boarding .b-name { font-weight: bold; color: #1f4e79; }
-    .boarding .b-price { color: #2e6fa3; font-weight: bold; float: right; }
+    .boarding .b-price { color: #e8a33d; font-weight: bold; float: right; font-size: 1.1rem; }
     .boarding .b-desc { font-size: 0.9rem; color: #5c7791; }
 
-    .info { list-style: none; }
-    .info li { padding: 6px 0; }
-    .info .label { display: inline-block; width: 90px; color: #2e6fa3; font-weight: bold; }
+    /* メニュー */
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 12px 0; border-bottom: 1px dashed #b9cfe0;
+    }
+    .menu-item .name { font-weight: bold; }
+    .menu-item .desc { font-size: 0.82rem; color: #7a94ab; display: block; font-weight: normal; }
+    .menu-item .price { color: #2e6fa3; font-weight: bold; white-space: nowrap; margin-left: 16px; }
 
+    /* お願い */
     .rules { list-style: none; }
-    .rules li { padding: 4px 0 4px 26px; position: relative; }
+    .rules li { padding: 5px 0 5px 28px; position: relative; }
     .rules li::before { content: "✈️"; position: absolute; left: 0; }
 
+    /* 営業案内 */
+    .info { list-style: none; background: #fff; border-radius: 16px; padding: 22px 26px; box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10); }
+    .info li { padding: 7px 0; border-bottom: 1px solid #edf3f8; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { display: inline-block; width: 100px; color: #2e6fa3; font-weight: bold; }
+
     footer {
-      text-align: center; padding: 30px 20px;
+      text-align: center; padding: 34px 20px;
       background: #1f4e79; color: #dceaf6; font-size: 0.9rem;
     }
+    footer .f-logo { font-size: 26px; margin-bottom: 6px; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">✈️</div>
+  <nav>
+    <div class="inner">
+      <span class="brand">✈ AIR PLANE CAFE</span>
+      <a href="#about">お店について</a>
+      <a href="#seats">座席</a>
+      <a href="#plans">搭乗プラン</a>
+      <a href="#menu">メニュー</a>
+      <a href="#access">アクセス</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="plane">✈️</span>
     <h1>エアプレインカフェ</h1>
     <div class="en">AIR PLANE CAFE</div>
-    <p>コーヒーとともに、空の旅へ。</p>
+    <p>コーヒーとともに、空の旅へ。搭乗手続きはいりません。</p>
+    <a class="cta" href="#plans">搭乗プランを見る</a>
   </header>
 
   <div class="wrap">
 
-    <section>
+    <section id="about">
       <h2>🛫 お店について</h2>
-      <p>AIR PLANE CAFE「エアプレインカフェ」へようこそ。店内は飛行機のキャビンをイメージした空間で、本物の航空機シートに座りながら、機内食風のメニューをお楽しみいただけます。大きな窓の外に広がる空を眺めれば、気分はまるでフライト中。搭乗手続きはいりません、どうぞお気軽にご搭乗ください。</p>
+      <div class="h-sub">ABOUT US</div>
+      <p>AIR PLANE CAFE「エアプレインカフェ」へようこそ。店内は飛行機のキャビンをまるごと再現した空間で、実際に航空機で使われていた本物のシートに座りながら、機内食風のメニューをお楽しみいただけます。窓の外に流れる雲の映像と、ほのかに響くエンジン音のBGMで、気分はまるで高度1万メートルのフライト中。パスポートも搭乗券もいりません。どうぞお気軽にご搭乗ください。</p>
     </section>
 
-    <section>
+    <section id="seats">
       <h2>💺 座席のご案内</h2>
+      <div class="h-sub">SEAT MAP</div>
       <div class="seats">
-        <div class="seat"><div class="icon">🪟</div><div class="name">窓側シート</div><div class="note">空を眺めながらくつろげる人気席</div></div>
-        <div class="seat"><div class="icon">🛋️</div><div class="name">ファーストクラス</div><div class="note">ゆったり本革リクライニング</div></div>
-        <div class="seat"><div class="icon">🕹️</div><div class="name">コックピット席</div><div class="note">計器パネルに囲まれた特等席</div></div>
+        <div class="seat"><div class="icon">🪟</div><div class="name">窓側シート</div><div class="note">雲の映像が流れる窓際で、空を眺めながらくつろげる人気席。</div></div>
+        <div class="seat"><div class="icon">🛋️</div><div class="name">ファーストクラス</div><div class="note">ゆったり本革リクライニング。フットレスト完備の贅沢席。</div></div>
+        <div class="seat"><div class="icon">🕹️</div><div class="name">コックピット席</div><div class="note">計器パネルと操縦桿に囲まれた、一日3組限定の特等席。</div></div>
       </div>
     </section>
 
-    <section>
+    <section id="plans">
       <h2>🎫 搭乗プラン</h2>
-      <div class="boarding"><span class="b-name">エコノミープラン（60分）</span><span class="b-price">¥1,000</span><div class="b-desc">ワンドリンク付き。ふらっと立ち寄りたい方に。</div></div>
-      <div class="boarding"><span class="b-name">ビジネスプラン（90分）</span><span class="b-price">¥1,800</span><div class="b-desc">ドリンク＋機内食風スイーツ付き。</div></div>
-      <div class="boarding"><span class="b-name">ファーストプラン（フリータイム）</span><span class="b-price">¥2,800</span><div class="b-desc">時間を気にせずゆったり。ドリンクおかわり自由。</div></div>
+      <div class="h-sub">BOARDING PASS</div>
+      <div class="boarding">
+        <div class="stub"><span class="cls">CLASS</span><span class="code">ECO</span></div>
+        <div class="body"><span class="b-price">¥1,000</span><span class="b-name">エコノミープラン（60分）</span><div class="b-desc">ワンドリンク付き。ふらっと立ち寄りたい方に。</div></div>
+      </div>
+      <div class="boarding">
+        <div class="stub"><span class="cls">CLASS</span><span class="code">BIZ</span></div>
+        <div class="body"><span class="b-price">¥1,800</span><span class="b-name">ビジネスプラン（90分）</span><div class="b-desc">ドリンク＋機内食風スイーツ付き。ちょっと贅沢なひとときに。</div></div>
+      </div>
+      <div class="boarding">
+        <div class="stub"><span class="cls">CLASS</span><span class="code">FST</span></div>
+        <div class="body"><span class="b-price">¥2,800</span><span class="b-name">ファーストプラン（フリータイム）</span><div class="b-desc">時間を気にせずゆったり。ドリンクおかわり自由・ファーストクラス席優先。</div></div>
+      </div>
     </section>
 
-    <section>
+    <section id="menu">
       <h2>☕ 機内メニュー</h2>
-      <div class="menu-item"><span>キャプテンブレンドコーヒー</span><span class="price">¥500</span></div>
-      <div class="menu-item"><span>青空ソーダ</span><span class="price">¥580</span></div>
-      <div class="menu-item"><span>雲のカフェラテ</span><span class="price">¥560</span></div>
-      <div class="menu-item"><span>機内食プレート（ビーフ or チキン）</span><span class="price">¥1,200</span></div>
-      <div class="menu-item"><span>飛行機クッキー</span><span class="price">¥400</span></div>
+      <div class="h-sub">IN-FLIGHT MENU</div>
+      <div class="menu-item"><span class="name">キャプテンブレンドコーヒー<span class="desc">機長おすすめの深煎りブレンド</span></span><span class="price">¥500</span></div>
+      <div class="menu-item"><span class="name">雲のカフェラテ<span class="desc">ふわふわクラウドフォームのラテ</span></span><span class="price">¥560</span></div>
+      <div class="menu-item"><span class="name">青空ソーダ<span class="desc">飛行機雲シロップ入りの空色ソーダ</span></span><span class="price">¥580</span></div>
+      <div class="menu-item"><span class="name">機内食プレート（ビーフ or チキン）<span class="desc">本格トレイで提供する名物メニュー</span></span><span class="price">¥1,200</span></div>
+      <div class="menu-item"><span class="name">飛行機クッキー<span class="desc">おみやげにも人気のオリジナルクッキー</span></span><span class="price">¥400</span></div>
     </section>
 
-    <section>
+    <section id="rules">
       <h2>🧳 ご搭乗のお願い</h2>
+      <div class="h-sub">FLIGHT INFORMATION</div>
       <ul class="rules">
         <li>混雑時はお席のご利用時間を制限させていただく場合があります。</li>
-        <li>コックピット席の計器には、やさしく触れてください。</li>
+        <li>コックピット席の計器や操縦桿には、やさしく触れてください。</li>
         <li>他のお客様が写り込む撮影はご遠慮ください。</li>
         <li>シートベルト着用サインはありませんが、お忘れ物にご注意ください。</li>
       </ul>
     </section>
 
-    <section>
+    <section id="access">
       <h2>📍 運航案内・アクセス</h2>
+      <div class="h-sub">ACCESS</div>
       <ul class="info">
         <li><span class="label">住所</span>東京都どこか市そら町 7-4-7</li>
         <li><span class="label">営業時間</span>10:00–20:00（最終搭乗 19:00）</li>
@@ -138,6 +219,7 @@
   </div>
 
   <footer>
+    <div class="f-logo">✈️</div>
     © 2026 AIR PLANE CAFE エアプレインカフェ
   </footer>
 
