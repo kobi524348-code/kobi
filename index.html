@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cat Warming Cafe ねこのぬくもり — 猫カフェ</title>
-  <meta name="description" content="かわいい猫たちとゆっくり過ごせる猫カフェ「ねこのぬくもり」のホームページです。ドリンク片手に、癒しのひとときをどうぞ。">
+  <title>AIR PLANE CAFE エアプレインカフェ — 飛行機カフェ</title>
+  <meta name="description" content="空と飛行機をテーマにしたカフェ「AIR PLANE CAFE」のホームページです。機内食風メニューとともに、空の旅気分をお楽しみください。">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      color: #3a3536;
-      background: #f7f3f7;
+      color: #26323f;
+      background: #f2f7fb;
       line-height: 1.9;
     }
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
@@ -18,128 +18,127 @@
     header {
       text-align: center;
       padding: 64px 20px 54px;
-      background: linear-gradient(135deg, #f5e6ef 0%, #efe3f4 100%);
-      border-bottom: 3px solid #b98bc9;
+      background: linear-gradient(160deg, #dff0fb 0%, #cfe4f7 55%, #eef6fc 100%);
+      border-bottom: 3px solid #2e6fa3;
     }
     header .logo { font-size: 66px; line-height: 1; }
-    header h1 { font-size: 2rem; margin-top: 10px; color: #6a4a78; letter-spacing: 0.03em; }
-    header .en { color: #b98bc9; font-size: 0.95rem; letter-spacing: 0.15em; margin-top: 2px; }
-    header p { color: #8a7d8f; margin-top: 8px; }
+    header h1 { font-size: 2rem; margin-top: 10px; color: #1f4e79; letter-spacing: 0.06em; }
+    header .en { color: #2e6fa3; font-size: 0.95rem; letter-spacing: 0.25em; margin-top: 2px; }
+    header p { color: #5c7791; margin-top: 8px; }
 
-    section { padding: 46px 0; border-bottom: 1px solid #e6dcea; }
+    section { padding: 46px 0; border-bottom: 1px solid #dbe7f0; }
     section:last-of-type { border-bottom: none; }
     h2 {
-      font-size: 1.4rem; color: #6a4a78; margin-bottom: 18px;
+      font-size: 1.4rem; color: #1f4e79; margin-bottom: 18px;
       display: flex; align-items: center; gap: 8px;
     }
 
-    .cats { display: flex; flex-wrap: wrap; gap: 16px; }
-    .cat {
-      flex: 1 1 150px; background: #fff; border-radius: 16px;
+    .seats { display: flex; flex-wrap: wrap; gap: 16px; }
+    .seat {
+      flex: 1 1 200px; background: #fff; border-radius: 16px;
       padding: 20px 16px; text-align: center;
-      box-shadow: 0 6px 16px rgba(106, 74, 120, 0.08);
+      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
+      border-top: 4px solid #2e6fa3;
     }
-    .cat .face { font-size: 40px; line-height: 1; }
-    .cat .name { font-weight: bold; color: #6a4a78; margin-top: 8px; }
-    .cat .note { font-size: 0.85rem; color: #8a7d8f; }
+    .seat .icon { font-size: 40px; line-height: 1; }
+    .seat .name { font-weight: bold; color: #1f4e79; margin-top: 8px; }
+    .seat .note { font-size: 0.85rem; color: #5c7791; }
 
     .menu-item {
       display: flex; justify-content: space-between;
-      padding: 10px 0; border-bottom: 1px dashed #d8c9e0;
+      padding: 10px 0; border-bottom: 1px dashed #b9cfe0;
     }
-    .menu-item .price { color: #b06fb0; font-weight: bold; white-space: nowrap; }
+    .menu-item .price { color: #2e6fa3; font-weight: bold; white-space: nowrap; }
 
-    .plan {
+    .boarding {
       background: #fff; border-radius: 16px; padding: 18px 20px;
-      box-shadow: 0 6px 16px rgba(106, 74, 120, 0.08); margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10); margin-bottom: 12px;
+      border-left: 6px solid #e8a33d;
     }
-    .plan .p-name { font-weight: bold; color: #6a4a78; }
-    .plan .p-price { color: #b06fb0; font-weight: bold; float: right; }
-    .plan .p-desc { font-size: 0.9rem; color: #8a7d8f; }
+    .boarding .b-name { font-weight: bold; color: #1f4e79; }
+    .boarding .b-price { color: #2e6fa3; font-weight: bold; float: right; }
+    .boarding .b-desc { font-size: 0.9rem; color: #5c7791; }
 
     .info { list-style: none; }
     .info li { padding: 6px 0; }
-    .info .label { display: inline-block; width: 90px; color: #b06fb0; font-weight: bold; }
+    .info .label { display: inline-block; width: 90px; color: #2e6fa3; font-weight: bold; }
 
     .rules { list-style: none; }
     .rules li { padding: 4px 0 4px 26px; position: relative; }
-    .rules li::before { content: "🐾"; position: absolute; left: 0; }
+    .rules li::before { content: "✈️"; position: absolute; left: 0; }
 
     footer {
       text-align: center; padding: 30px 20px;
-      background: #6a4a78; color: #eaddf0; font-size: 0.9rem;
+      background: #1f4e79; color: #dceaf6; font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">🐱</div>
-    <h1>ねこのぬくもり</h1>
-    <div class="en">CAT WARMING CAFE</div>
-    <p>猫たちと過ごす、癒しのひととき</p>
+    <div class="logo">✈️</div>
+    <h1>エアプレインカフェ</h1>
+    <div class="en">AIR PLANE CAFE</div>
+    <p>コーヒーとともに、空の旅へ。</p>
   </header>
 
   <div class="wrap">
 
     <section>
-      <h2>🐈 お店について</h2>
-      <p>Cat Warming Cafe「ねこのぬくもり」へようこそ。個性ゆたかな猫たちが、あなたのお越しをのんびり待っています。あたたかいドリンクを片手に、思い思いにくつろぐ猫たちとの、やさしい時間をお楽しみください。</p>
+      <h2>🛫 お店について</h2>
+      <p>AIR PLANE CAFE「エアプレインカフェ」へようこそ。店内は飛行機のキャビンをイメージした空間で、本物の航空機シートに座りながら、機内食風のメニューをお楽しみいただけます。大きな窓の外に広がる空を眺めれば、気分はまるでフライト中。搭乗手続きはいりません、どうぞお気軽にご搭乗ください。</p>
     </section>
 
     <section>
-      <h2>🐾 看板猫たち</h2>
-      <div class="cats">
-        <div class="cat"><div class="face">😺</div><div class="name">とら</div><div class="note">やんちゃな茶トラ</div></div>
-        <div class="cat"><div class="face">🐱</div><div class="name">えだまめ</div><div class="note">甘えん坊さん</div></div>
-        <div class="cat"><div class="face">🐈</div><div class="name">きね</div><div class="note">のんびり屋さん</div></div>
-        <div class="cat"><div class="face">🐈</div><div class="name">しろ</div><div class="note">真っ白な白猫</div></div>
-        <div class="cat"><div class="face">🐈‍⬛</div><div class="name">くろ</div><div class="note">つやつや黒猫</div></div>
+      <h2>💺 座席のご案内</h2>
+      <div class="seats">
+        <div class="seat"><div class="icon">🪟</div><div class="name">窓側シート</div><div class="note">空を眺めながらくつろげる人気席</div></div>
+        <div class="seat"><div class="icon">🛋️</div><div class="name">ファーストクラス</div><div class="note">ゆったり本革リクライニング</div></div>
+        <div class="seat"><div class="icon">🕹️</div><div class="name">コックピット席</div><div class="note">計器パネルに囲まれた特等席</div></div>
       </div>
     </section>
 
     <section>
-      <h2>⏰ ご利用プラン</h2>
-      <div class="plan"><span class="p-name">30分プラン</span><span class="p-price">¥800</span><div class="p-desc">まずは気軽に猫とふれあいたい方に。</div></div>
-      <div class="plan"><span class="p-name">60分プラン</span><span class="p-price">¥1,400</span><div class="p-desc">ゆっくり過ごしたい方におすすめ。</div></div>
-      <div class="plan"><span class="p-name">フリータイム</span><span class="p-price">¥2,200</span><div class="p-desc">時間を気にせず一日のんびり。ワンドリンク付き。</div></div>
+      <h2>🎫 搭乗プラン</h2>
+      <div class="boarding"><span class="b-name">エコノミープラン（60分）</span><span class="b-price">¥1,000</span><div class="b-desc">ワンドリンク付き。ふらっと立ち寄りたい方に。</div></div>
+      <div class="boarding"><span class="b-name">ビジネスプラン（90分）</span><span class="b-price">¥1,800</span><div class="b-desc">ドリンク＋機内食風スイーツ付き。</div></div>
+      <div class="boarding"><span class="b-name">ファーストプラン（フリータイム）</span><span class="b-price">¥2,800</span><div class="b-desc">時間を気にせずゆったり。ドリンクおかわり自由。</div></div>
     </section>
 
     <section>
-      <h2>☕ ドリンクメニュー</h2>
-      <div class="menu-item"><span>コーヒー / 紅茶</span><span class="price">¥450</span></div>
-      <div class="menu-item"><span>カフェラテ</span><span class="price">¥520</span></div>
-      <div class="menu-item"><span>いちごミルク</span><span class="price">¥550</span></div>
-      <div class="menu-item"><span>ハーブティー</span><span class="price">¥500</span></div>
-      <div class="menu-item"><span>猫型クッキー</span><span class="price">¥380</span></div>
+      <h2>☕ 機内メニュー</h2>
+      <div class="menu-item"><span>キャプテンブレンドコーヒー</span><span class="price">¥500</span></div>
+      <div class="menu-item"><span>青空ソーダ</span><span class="price">¥580</span></div>
+      <div class="menu-item"><span>雲のカフェラテ</span><span class="price">¥560</span></div>
+      <div class="menu-item"><span>機内食プレート（ビーフ or チキン）</span><span class="price">¥1,200</span></div>
+      <div class="menu-item"><span>飛行機クッキー</span><span class="price">¥400</span></div>
     </section>
 
     <section>
-      <h2>🐾 ご利用のお願い</h2>
+      <h2>🧳 ご搭乗のお願い</h2>
       <ul class="rules">
-        <li>入店時は手指の消毒をお願いします。</li>
-        <li>猫のごはん・おやつの持ち込みはご遠慮ください。</li>
-        <li>眠っている猫は、そっと見守ってあげてください。</li>
-        <li>抱っこや無理に追いかけることはお控えください。</li>
-        <li>フラッシュ撮影は禁止です。</li>
+        <li>混雑時はお席のご利用時間を制限させていただく場合があります。</li>
+        <li>コックピット席の計器には、やさしく触れてください。</li>
+        <li>他のお客様が写り込む撮影はご遠慮ください。</li>
+        <li>シートベルト着用サインはありませんが、お忘れ物にご注意ください。</li>
       </ul>
     </section>
 
     <section>
-      <h2>📍 営業案内・アクセス</h2>
+      <h2>📍 運航案内・アクセス</h2>
       <ul class="info">
-        <li><span class="label">住所</span>東京都どこか市ねこ町 2-4-6</li>
-        <li><span class="label">営業時間</span>11:00–20:00（最終受付 19:00）</li>
-        <li><span class="label">定休日</span>毎週木曜日</li>
-        <li><span class="label">電話</span>03-9876-5432</li>
-        <li><span class="label">アクセス</span>ねこ駅 西口より徒歩5分</li>
+        <li><span class="label">住所</span>東京都どこか市そら町 7-4-7</li>
+        <li><span class="label">営業時間</span>10:00–20:00（最終搭乗 19:00）</li>
+        <li><span class="label">定休日</span>毎週水曜日</li>
+        <li><span class="label">電話</span>03-1234-7470</li>
+        <li><span class="label">アクセス</span>ひこうき駅 東口より徒歩3分</li>
       </ul>
     </section>
 
   </div>
 
   <footer>
-    © 2026 Cat Warming Cafe ねこのぬくもり
+    © 2026 AIR PLANE CAFE エアプレインカフェ
   </footer>
 
 </body>
