@@ -82,6 +82,18 @@
     display: inline-block; font-size: 110px; font-weight: bold; color: #fff;
     background: var(--zunda); border-radius: 36px; padding: 24px 70px;
   }
+
+  /* イラスト */
+  .ill { display: block; object-fit: contain; }
+  .row { display: flex; align-items: center; justify-content: center; gap: 40px; }
+  .chip { display: flex; align-items: center; gap: 24px; }
+  .chip img { width: 110px; height: 110px; }
+  .walker {
+    position: absolute; left: calc(4.5% - 75px); bottom: 100%;
+    width: 150px; height: 150px; transform: scaleX(-1);
+  }
+  .bar-wrap { position: relative; width: 1400px; margin-top: 170px; }
+  .bar-wrap .bar { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -91,8 +103,8 @@
   <div class="tag">導入</div><div class="no">1 / 6</div>
   <div class="big">3日坊主、<br>ありますか？</div>
   <div class="chips">
-    <div class="chip"><s>日記</s></div>
-    <div class="chip"><s>ランニング</s></div>
+    <div class="chip"><img src="images/notebook.webp" alt=""><s>日記</s></div>
+    <div class="chip"><img src="images/shoe.webp" alt=""><s>ランニング</s></div>
   </div>
 </section>
 
@@ -100,14 +112,14 @@
 <section class="slide" data-n="2">
   <div class="tag">疑問</div><div class="no">2 / 6</div>
   <div class="mid"><span class="cross">意志が弱いから</span></div>
-  <div class="big mt">じゃあ、<span class="accent">なぜ？</span></div>
+  <div class="row mt"><img class="ill" src="images/thinking.webp" alt="" style="width:240px;height:240px"><div class="big">じゃあ、<span class="accent">なぜ？</span></div></div>
 </section>
 
 <!-- 3 解決：66日 -->
 <section class="slide" data-n="3">
   <div class="tag">解決</div><div class="no">3 / 6</div>
   <div class="mid">習慣になるまで 平均</div>
-  <div class="num">66<span>日</span></div>
+  <div class="row"><img class="ill" src="images/calendar.webp" alt="" style="width:240px;height:240px"><div class="num">66<span>日</span></div></div>
   <div class="mid mt" style="font-size:72px">人によって <span class="accent">18日〜254日</span></div>
   <div class="note">ロンドン大学の研究（参加者96人）より</div>
 </section>
@@ -116,7 +128,7 @@
 <section class="slide" data-n="4">
   <div class="tag">解決</div><div class="no">4 / 6</div>
   <div class="big">3日目は、<br><span class="accent">まだ途中</span></div>
-  <div class="bar"><div class="fill"></div></div>
+  <div class="bar-wrap"><img class="walker" src="images/walking.webp" alt=""><div class="bar"><div class="fill"></div></div></div>
   <div class="bar-labels"><span class="marker">▲ 3日目</span><span>66日</span></div>
 </section>
 
@@ -124,14 +136,14 @@
 <section class="slide" data-n="5">
   <div class="tag">コツ</div><div class="no">5 / 6</div>
   <div class="mid">やめられないほど<br><span class="accent">小さく</span>する</div>
-  <div class="mt"><span class="pill">1日1行・1分</span></div>
+  <div class="row mt"><img class="ill" src="images/memo.webp" alt="" style="width:180px;height:180px"><span class="pill">1日1行・1分</span><img class="ill" src="images/hourglass.webp" alt="" style="width:180px;height:180px"></div>
 </section>
 
 <!-- 6 まとめ -->
 <section class="slide" data-n="6">
   <div class="tag">まとめ</div><div class="no">6 / 6</div>
   <div class="mid">66日続けるつもりで</div>
-  <div class="big mt">今日は<span class="accent">1分</span>だけ</div>
+  <div class="row mt"><img class="ill" src="images/seedling.webp" alt="" style="width:240px;height:240px"><div class="big">今日は<span class="accent">1分</span>だけ</div></div>
 </section>
 
 <script>
