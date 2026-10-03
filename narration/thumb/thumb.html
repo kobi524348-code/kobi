@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:N;src:url(noto900.ttf);font-weight:900}
+@font-face{font-family:N;src:url(noto700.ttf);font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1280px;height:720px;overflow:hidden}
+body{background:#FFF7EC;font-family:N;color:#3A2E28;position:relative}
+.band{position:absolute;left:0;top:0;width:100%;height:22px;background:#F08A28}
+.band.b{top:auto;bottom:0}
+.left{position:absolute;left:64px;top:70px;width:720px}
+.tag{display:inline-block;background:#3A2E28;color:#fff;font-weight:900;font-size:40px;padding:6px 28px;border-radius:40px}
+.q{font-weight:900;font-size:112px;line-height:1.12;margin-top:30px;letter-spacing:-2px}
+.strike{position:relative;display:inline-block;color:#9A8A80;font-size:72px;font-weight:900;margin-top:16px}
+.strike:after{content:"";position:absolute;left:-10px;right:-10px;top:52%;height:12px;background:#F08A28;border-radius:6px;transform:rotate(-3deg)}
+.ans{margin-top:22px;font-weight:900;font-size:104px;line-height:1.1}
+.ans em{font-style:normal;color:#F08A28}
+.right{position:absolute;right:40px;top:120px;width:470px;height:470px;background:#fff;border:8px solid #F08A28;border-radius:48px;box-shadow:0 14px 0 #E7D9C4;text-align:center}
+.right .cal{width:140px;position:absolute;left:-40px;top:-60px;border-radius:30px;transform:rotate(-10deg);box-shadow:0 8px 18px rgba(0,0,0,.12)}
+.big{font-weight:900;color:#F08A28;font-size:250px;line-height:1;margin-top:70px;letter-spacing:-8px}
+.big small{font-size:110px;letter-spacing:0}
+.cap{font-weight:900;font-size:44px;margin-top:4px}
+.think{position:absolute;left:572px;top:492px;width:176px}
+</style></head><body>
+<div class="band"></div><div class="band b"></div>
+<div class="left">
+  <div class="tag">習慣化のコツ</div>
+  <div class="q">3日坊主は</div>
+  <div class="strike">意志が弱いから</div>
+  <div class="ans">じゃ<em>ない！</em></div>
+</div>
+<img class="think" src="think.png">
+<div class="right">
+  <img class="cal" src="cal.png">
+  <div class="big">66<small>日</small></div>
+  <div class="cap">続けば習慣になる</div>
+</div>
+</body></html>
