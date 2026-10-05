@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 330">
+  <!-- edamame horns -->
+  <g stroke="#3E7A2A" stroke-width="5" stroke-linejoin="round">
+    <path d="M92 92 C70 60 66 30 82 12 C96 0 112 14 108 34 C118 30 126 44 118 58 C128 60 128 78 116 90 Z" fill="#9BD15A"/>
+    <path d="M208 92 C230 60 234 30 218 12 C204 0 188 14 192 34 C182 30 174 44 182 58 C172 60 172 78 184 90 Z" fill="#9BD15A"/>
+  </g>
+  <g fill="#C6EA8E"><circle cx="90" cy="28" r="7"/><circle cx="108" cy="52" r="6"/><circle cx="210" cy="28" r="7"/><circle cx="192" cy="52" r="6"/></g>
+  <!-- back hair -->
+  <path d="M40 170 C30 100 80 70 150 70 C220 70 270 100 260 170 L262 250 C240 262 222 250 218 236 L82 236 C78 250 60 262 38 250 Z" fill="#7DBE4A" stroke="#3E7A2A" stroke-width="5"/>
+  <!-- body -->
+  <path d="M95 255 C95 238 205 238 205 255 L222 330 L78 330 Z" fill="#F4F4EE" stroke="#3E7A2A" stroke-width="5"/>
+  <path d="M135 248 L150 268 L165 248" fill="#7DBE4A" stroke="#3E7A2A" stroke-width="4"/>
+  <!-- face -->
+  <ellipse cx="150" cy="172" rx="88" ry="82" fill="#FFF1E4" stroke="#3E7A2A" stroke-width="5"/>
+  <!-- bangs -->
+  <path d="M62 160 C62 100 100 82 150 82 C200 82 238 100 238 160 C224 136 206 124 192 120 C188 134 178 140 166 142 C168 130 164 122 158 116 C150 132 132 142 110 142 C114 132 114 126 112 120 C92 130 74 142 62 160 Z" fill="#7DBE4A" stroke="#3E7A2A" stroke-width="5" stroke-linejoin="round"/>
+  <!-- raised brows -->
+  <path d="M96 140 Q114 128 130 138" fill="none" stroke="#3E7A2A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M170 138 Q186 128 204 140" fill="none" stroke="#3E7A2A" stroke-width="6" stroke-linecap="round"/>
+  <!-- surprised eyes -->
+  <g stroke="#3B2E28" stroke-width="5"><circle cx="114" cy="172" r="22" fill="#fff"/><circle cx="186" cy="172" r="22" fill="#fff"/></g>
+  <g fill="#C0761E"><circle cx="114" cy="174" r="9"/><circle cx="186" cy="174" r="9"/></g>
+  <g fill="#3B2E28"><circle cx="114" cy="174" r="4.5"/><circle cx="186" cy="174" r="4.5"/></g>
+  <!-- blush -->
+  <g fill="#FFB3A7" opacity=".8"><ellipse cx="88" cy="205" rx="14" ry="8"/><ellipse cx="212" cy="205" rx="14" ry="8"/></g>
+  <!-- open mouth -->
+  <ellipse cx="150" cy="218" rx="16" ry="20" fill="#B8423A" stroke="#3B2E28" stroke-width="5"/>
+  <ellipse cx="150" cy="228" rx="9" ry="7" fill="#F08A8A"/>
+  <!-- sweat -->
+  <path d="M244 150 C236 166 236 176 244 180 C252 176 252 166 244 150 Z" fill="#8FD3FF" stroke="#2D7DB3" stroke-width="3"/>
+</svg>
